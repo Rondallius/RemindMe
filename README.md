@@ -134,8 +134,8 @@ RemindMe
 1. Clone the repository:
 
 ```bash
-git clone <your-github-repository-link>
-cd RemindMe-main
+git clone https://github.com/Rondallius/RemindMe.git
+cd RemindMe
 ```
 
 2. Create a virtual environment:
@@ -322,7 +322,7 @@ All database values are passed using `?` parameters, keeping user input separate
 ### Main Task Management Screen
 
 
-<img width="947" height="669" alt="MainTaskManagementScreenshot" src="https://github.com/user-attachments/assets/bbcd60c3-3139-4073-aa67-e9d03a3c7a60" />
+<img width="947" height="669" alt="MainTaskManagementScreenshot" src="https://github.com/user-attachments/assets/ba8df7f7-0634-452d-b218-baf7dde8259c" />
 
 
 *Shows the main RemindMe window: the blue header with the Exit button, the Add Task form
@@ -333,7 +333,7 @@ and the countdown label under the table.*
 ### Digital Task Notification
 
 
-<img width="511" height="478" alt="DigitalTaskNotification" src="https://github.com/user-attachments/assets/f4fb5ea5-8f8c-4fa6-ba92-4ba502028c8d" />
+<img width="511" height="478" alt="DigitalTaskNotification" src="https://github.com/user-attachments/assets/cccc4d1b-6852-4ba4-aaf2-fa3bd32976d8" />
 
 
 *Shows the blue Digital Task reminder window that appears when a task with the type
@@ -344,7 +344,7 @@ each other.*
 ### Real-Life Task Notification
 
 
-<img width="593" height="346" alt="RealLifeTaskNotification" src="https://github.com/user-attachments/assets/23f63b3a-f35e-4a98-b0f4-851b0e266ca3" />
+<img width="593" height="346" alt="RealLifeTaskNotification" src="https://github.com/user-attachments/assets/9f8c245d-3b98-4ef4-b729-01cf266e258a" />
 
 
 
