@@ -1,0 +1,167 @@
+/*
+    Style of the Notification feature: the two reminder windows.
+
+    #digitalTaskView and #realLifeTaskView are chosen from the task type, so the
+    task type also decides the colors.
+*/
+
+/* ---- Digital Task: blue, screen themed, buttons under each other ---- */
+
+#digitalTaskView {
+    background-color: #e8f1fb;
+}
+
+/*
+    The blue header band.
+
+    The icon, the title and the subtitle share one blue rounded block, so the
+    header reads as one polished band, exactly like the orange header of the
+    Real-Life Task window but in the blue Digital Task colors.
+*/
+#digitalTaskView QFrame#digitalTaskHeader {
+    background-color: #1565c0;
+    border: none;
+    border-radius: 12px;
+}
+
+#digitalTaskView QLabel#digitalTaskHeaderIcon {
+    background: transparent;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+#digitalTaskView QLabel#digitalTaskHeaderTitle {
+    background: transparent;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#digitalTaskView QLabel#digitalTaskHeaderSubtitle {
+    background: transparent;
+    color: #d6e6fb;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* --- the white card around the task --- */
+
+#digitalTaskView QFrame#digitalTaskCard {
+    background-color: #ffffff;
+    border: 1px solid #c3d7ee;
+    border-radius: 12px;
+}
+
+/*
+    The task name sits on a light blue block, so it is the first thing that
+    is read. This mirrors the highlighted name of the Real-Life Task window,
+    but with the blue Digital Task colors instead of orange.
+*/
+#digitalTaskView QLabel#digitalTaskName {
+    background-color: #e3f0fd;
+    border: none;
+    border-left: 4px solid #1565c0;
+    border-radius: 8px;
+    color: #0d3c70;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 12px 14px;
+}
+
+#digitalTaskView QLabel#digitalTaskDescription {
+    background: transparent;
+    color: #4a5c6e;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+
+/* A thin light blue line between the task text and the buttons. */
+#digitalTaskView QFrame#digitalTaskSeparator {
+    background-color: #dce8f6;
+    border: none;
+    max-height: 1px;
+    min-height: 1px;
+}
+
+#digitalTaskView QPushButton#primaryButton {
+    background: #1565c0;
+    border: 1px solid #1565c0;
+    color: #ffffff;
+}
+
+#digitalTaskView QPushButton#primaryButton:hover {
+    background: #0d47a1;
+    border-color: #0d47a1;
+}
+
+#digitalTaskView QPushButton#secondaryButton {
+    background: #ffffff;
+    border: 1px solid #9dc3e6;
+    color: #1565c0;
+}
+
+#digitalTaskView QPushButton#secondaryButton:hover {
+    background: #eaf3fd;
+    border-color: #1565c0;
+}
+
+#digitalTaskView QPushButton#secondaryButton:pressed {
+    background: #d6e8fa;
+}
+
+/* ---- Real-Life Task: orange, wide, buttons in a row ---- */
+
+#realLifeTaskView {
+    background-color: #fff4e6;
+}
+
+#realLifeTaskView QLabel#realLifeTaskHeader {
+    background-color: #d9480f;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 16px 12px;
+}
+
+#realLifeTaskView QFrame#realLifeTaskCard {
+    background-color: #ffffff;
+    border: 3px solid #d9480f;
+    border-radius: 10px;
+}
+
+#realLifeTaskView QLabel#realLifeTaskName {
+    background-color: #ffedd5;
+    border: none;
+    border-radius: 8px;
+    color: #7c2d12;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 12px 10px;
+}
+
+#realLifeTaskView QLabel#realLifeTaskDescription {
+    background: transparent;
+    color: #7c2d12;
+    font-size: 13px;
+    padding: 2px 10px;
+}
+
+#realLifeTaskView QPushButton#primaryButton {
+    background: #d9480f;
+}
+
+#realLifeTaskView QPushButton#primaryButton:hover {
+    background: #c2410c;
+}
+
+#realLifeTaskView QPushButton#secondaryButton {
+    background: #ffffff;
+    border: 2px solid #d9480f;
+    color: #9a3412;
+}
+
+#realLifeTaskView QPushButton#secondaryButton:hover {
+    background: #ffedd5;
+}

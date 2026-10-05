@@ -1,0 +1,355 @@
+/*
+    Style of the Management feature.
+
+    Every selector starts with #managementView, so these styles only affect the
+    Management screen. The layout and the logic are not touched here: this file
+    only decides how the existing widgets look.
+
+    The three action buttons are told apart by their object names, which are
+    set in view.py:
+
+        Add Task     -> #primaryButton   (blue)
+        Complete Task-> #completeButton  (green)
+        Delete Task  -> #dangerButton    (red)
+*/
+
+/* --- Add Task: the blue main action --- */
+
+#managementView QPushButton#primaryButton {
+    background: #1976d2;
+    border: 1px solid #1976d2;
+    color: #ffffff;
+}
+
+#managementView QPushButton#primaryButton:hover {
+    background: #1565c0;
+    border-color: #1565c0;
+}
+
+#managementView QPushButton#primaryButton:pressed {
+    background: #14539c;
+    border-color: #14539c;
+}
+
+#managementView QPushButton#primaryButton:disabled {
+    background: #9fc3e0;
+    border-color: #9fc3e0;
+    color: #eef4fa;
+}
+
+/* --- Complete Task: green, because it finishes something --- */
+
+#managementView QPushButton#completeButton {
+    background: #2e8b57;
+    border: 1px solid #2e8b57;
+    color: #ffffff;
+}
+
+#managementView QPushButton#completeButton:hover {
+    background: #267349;
+    border-color: #267349;
+}
+
+#managementView QPushButton#completeButton:pressed {
+    background: #1f5c3a;
+    border-color: #1f5c3a;
+}
+
+#managementView QPushButton#completeButton:disabled {
+    background: #a9cbb4;
+    border-color: #a9cbb4;
+    color: #f0f6f2;
+}
+
+/* --- Delete Task: red, because it removes something --- */
+
+#managementView QPushButton#dangerButton {
+    background: #d9534f;
+    border: 1px solid #d9534f;
+    color: #ffffff;
+}
+
+#managementView QPushButton#dangerButton:hover {
+    background: #c9302c;
+    border-color: #c9302c;
+}
+
+#managementView QPushButton#dangerButton:pressed {
+    background: #a52723;
+    border-color: #a52723;
+}
+
+#managementView QPushButton#dangerButton:disabled {
+    background: #e3aaa7;
+    border-color: #e3aaa7;
+    color: #fbf0ef;
+}
+
+/*
+    The Delete confirmation dialog.
+
+    The dialog is a child of #managementView, so these rules also reach the
+    buttons inside the message box. The Yes button carries the object name
+    #confirmDeleteButton and is red, so the destructive action is obvious,
+    while the Cancel button (#cancelDeleteButton) stays a neutral gray.
+*/
+#managementView QMessageBox {
+    background: #ffffff;
+}
+
+#managementView QMessageBox QLabel {
+    color: #1f2937;
+}
+
+#managementView QMessageBox QPushButton#confirmDeleteButton {
+    background: #d9534f;
+    border: 1px solid #c9302c;
+    color: #ffffff;
+    font-weight: 700;
+    min-width: 96px;
+}
+
+#managementView QMessageBox QPushButton#confirmDeleteButton:hover {
+    background: #c9302c;
+    border-color: #a52723;
+}
+
+#managementView QMessageBox QPushButton#confirmDeleteButton:pressed {
+    background: #a52723;
+}
+
+#managementView QMessageBox QPushButton#confirmDeleteButton:focus {
+    border: 2px solid #7f1d1d;
+}
+
+#managementView QMessageBox QPushButton#cancelDeleteButton {
+    background: #ffffff;
+    border: 1px solid #b8c6d9;
+    color: #334155;
+    font-weight: 600;
+    min-width: 96px;
+}
+
+#managementView QMessageBox QPushButton#cancelDeleteButton:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+#managementView QMessageBox QPushButton#cancelDeleteButton:pressed {
+    background: #e2e8f0;
+}
+
+/* --- the form inputs: a clearer border so the boxes stand out --- */
+
+#managementView QLineEdit:focus,
+#managementView QComboBox:focus,
+#managementView QTextEdit:focus {
+    border: 2px solid #1976d2;
+}
+
+/* --- the task table --- */
+
+#managementView QTableWidget {
+    background: #ffffff;
+    /* Every second row is only a little darker, so it stays calm to read. */
+    alternate-background-color: #f4f8fc;
+    border: 1px solid #d5deea;
+    border-radius: 6px;
+    gridline-color: #d9e2ec;
+}
+
+/*
+    The row separators.
+
+    A thin bottom border is drawn under every single cell, and because the
+    cells of one row sit next to each other, the borders join up and read as
+    one horizontal line across the whole table. The right border gives the
+    column separation. Both colours are light blue-gray, so they separate the
+    rows without looking heavy or dark.
+*/
+#managementView QTableWidget::item {
+    border: none;
+    border-bottom: 1px solid #d9e2ec;
+    border-right: 1px solid #eaeff6;
+    /* A little breathing room. The row height still grows automatically,
+       so a long description is never cut off. */
+    padding: 4px 6px;
+}
+
+/* --- the selected row: still clearly blue, with matching separators --- */
+
+#managementView QTableWidget::item:selected {
+    background: #d3e5fb;
+    color: #14395f;
+    border-bottom: 1px solid #b7d1f0;
+    border-right: 1px solid #b7d1f0;
+}
+
+/* --- the header: light blue, but clearly above the rows --- */
+
+#managementView QHeaderView::section {
+    background: #e3f2fd;
+    color: #0d47a1;
+    border: none;
+    /* A stronger line under the header tells it apart from the rows. */
+    border-bottom: 2px solid #1976d2;
+    font-weight: 700;
+    padding: 7px;
+}
+
+/* ==========================================================================
+    Main style of the application.
+
+    A Qt stylesheet works like CSS: a selector (QPushButton, #appHeader) matches
+    widgets, and the block below it sets how they look. The # names are object
+    names that are set in main.py.
+
+    These are the general rules for the whole program. They used to live in
+    style.qss in the project root and were loaded once by main.py; main.py now
+    loads this file instead, so they are kept here unchanged.
+
+    The rules above are the Management screen styles and all start with
+    #managementView, so they only affect that screen. The general rules below
+    are less specific, so the Management rules still win where they overlap.
+    ========================================================================== */
+
+* {
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+QWidget {
+    background-color: #f4f7fb;
+}
+
+/* --- the main window: background and the blue header --- */
+
+#mainContent {
+    background-color: #f4f7fb;
+}
+
+#appHeader {
+    background: #1769aa;
+    border: none;
+    border-radius: 10px;
+}
+
+#appTitle {
+    background: transparent;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+#appSubtitle {
+    background: transparent;
+    color: #dbeafe;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+QLabel {
+    color: #334155;
+    font-weight: 600;
+}
+
+QLineEdit, QComboBox, QTextEdit {
+    background: #ffffff;
+    border: 1px solid #b8c6d9;
+    border-radius: 6px;
+    min-height: 24px;
+    padding: 5px 8px;
+    selection-background-color: #2563eb;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 28px;
+}
+
+QComboBox QAbstractItemView {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    selection-background-color: #dbeafe;
+    selection-color: #1e3a5f;
+}
+
+QPushButton {
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: 600;
+    min-height: 28px;
+    padding: 6px 14px;
+}
+
+QPushButton:hover {
+    background: #1d4ed8;
+}
+
+QPushButton:pressed {
+    background: #1e40af;
+}
+
+QPushButton:disabled {
+    background: #94a3b8;
+    color: #e2e8f0;
+}
+
+#exitButton {
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    color: #145a91;
+    min-width: 88px;
+    padding: 6px 16px;
+}
+
+#exitButton:hover {
+    background: #eaf4ff;
+    color: #0f4c81;
+}
+
+#exitButton:pressed {
+    background: #dbeafe;
+}
+
+QTableWidget {
+    alternate-background-color: #f4f8fc;
+    background: #ffffff;
+    border: 1px solid #d5deea;
+    border-radius: 6px;
+    gridline-color: #d9e2ec;
+}
+
+QHeaderView::section {
+    background: #eaf2fb;
+    border: none;
+    border-bottom: 1px solid #c9d8e8;
+    color: #2f4356;
+    font-weight: 700;
+    padding: 8px;
+}
+
+QScrollBar:vertical {
+    background: #f1f5f9;
+    border: none;
+    margin: 2px;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background: #94a3b8;
+    border-radius: 5px;
+    min-height: 24px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QMessageBox {
+    background: #ffffff;
+}

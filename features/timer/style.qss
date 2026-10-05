@@ -1,0 +1,19 @@
+/*
+    Style of the Timer feature.
+
+    Only the countdown label is styled. #timerView and #countdownLabel are the
+    object names that are set in timer/view.py.
+*/
+
+#timerView QLabel#countdownLabel {
+    background-color: #ffffff;
+    border: 1px solid #cbe3d8;
+    border-radius: 6px;
+    color: #115e59;
+    font-weight: 400;
+    padding: 6px 10px;
+}
+
+#timerView QLabel#countdownLabel:hover {
+    border: 2px solid #0f766e;
+}
