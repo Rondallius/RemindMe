@@ -1,2 +1,0 @@
-# RemindMe
-Task Reminder Program
