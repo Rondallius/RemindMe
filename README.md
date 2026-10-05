@@ -70,30 +70,36 @@ library, so **PyQt6 is the only third-party package that must be installed.**
 The structure below is the actual structure of this project.
 
 ```text
-RemindMe
-├── main.py
-├── .gitignore
+RemindMe/
+│
 ├── database/
 │   └── database.py
-└── features/
-    ├── management/
-    │   ├── model.py
-    │   ├── repository.py
-    │   ├── service.py
-    │   ├── style.qss
-    │   └── view.py
-    ├── timer/
-    │   ├── model.py
-    │   ├── repository.py
-    │   ├── service.py
-    │   ├── style.qss
-    │   └── view.py
-    └── notification/
-        ├── model.py
-        ├── repository.py
-        ├── service.py
-        ├── style.qss
-        └── view.py
+│
+├── features/
+│   ├── management/
+│   │   ├── model.py
+│   │   ├── repository.py
+│   │   ├── service.py
+│   │   ├── style.qss
+│   │   └── view.py
+│   │
+│   ├── timer/
+│   │   ├── model.py
+│   │   ├── repository.py
+│   │   ├── service.py
+│   │   ├── style.qss
+│   │   └── view.py
+│   │
+│   └── notification/
+│       ├── model.py
+│       ├── repository.py
+│       ├── service.py
+│       ├── style.qss
+│       └── view.py
+│
+├── .gitignore
+├── README.md
+└── main.py
 ```
 
 ### File and Folder Explanations
