@@ -280,7 +280,13 @@ The project uses inheritance from the **PyQt6 framework**.
 
 ### Polymorphism
 
-Polymorphism is **not used** in this project.
+Polymorphism is used indirectly through **PyQt6** using **method overriding**.
+
+* `RemindMeWindow` overrides `closeEvent()` to ask for confirmation before closing.
+* `ReminderView` overrides `closeEvent()` so closing the window acts as **Dismiss**.
+* `ManagementView` overrides `resizeEvent()` to adjust the table layout.
+
+The project does not use custom abstract classes or its own polymorphic class hierarchy.
 
 ---
 
